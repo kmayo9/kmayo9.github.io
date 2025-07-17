@@ -9,6 +9,7 @@ This site showcases my work across supply chain analytics, dashboard development
 **📺 TV Series Dashboard**  
 Explore trends across 160,000+ global TV shows using Tableau.  
 → [View Dashboard](https://public.tableau.com/app/profile/kevin.mayo/vizzes)
+
  📺 **TV Series Analysis (Python)** — Exploratory notebook built in Kaggle using Pandas, Seaborn, and Matplotlib.  
   → [View Notebook](https://www.kaggle.com/code/kevinmayo/notebook5337711d0d)
 
