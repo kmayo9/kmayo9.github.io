@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎬 Film Quiz Game</title>
+  <style>
+    body { font-family: Arial; background: #f9f9f9; text-align: center; padding: 2em; }
+    .question { font-size: 1.2em; margin-top: 1em; }
+    button { margin: 0.5em; padding: 0.6em 1.2em; cursor: pointer; font-size: 1em; }
+    .feedback { margin-top: 1em; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>🎬 Guess the Runtime</h1>
+  <div class="question">What’s the average runtime of a Fantasy film?</div>
+  <button onclick="checkAnswer('A')">A) 105 mins</button>
+  <button onclick="checkAnswer('B')">B) 123 mins</button>
+  <button onclick="checkAnswer('C')">C) 140 mins</button>
+  <div class="feedback" id="feedback"></div>
+
+  <script>
+    function checkAnswer(choice) {
+      const feedback = document.getElementById("feedback");
+      if (choice === 'C') {
+        feedback.innerText = "✅ Correct! Fantasy films tend to have longer runtimes due to expansive storytelling.";
+      } else {
+        feedback.innerText = "❌ Not quite. Fantasy films often exceed 135 minutes to build immersive worlds.";
+      }
+    }
+  </script>
+</body>
+</html>
