@@ -1,18 +1,79 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles */
+.dark {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+/* Header */
+header h1 {
+  font-size: 2em;
+}
+
+header button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+/* Section spacing */
+section {
+  margin-top: 40px;
+}
+
+/* Dashboard layout: Grid format */
 .dashboard-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
 }
 
+/* Individual dashboard tiles */
+.dashboard {
+  text-align: center;
+}
+
+/* Dashboard images with size cap + hover effect */
 .dashboard img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dashboard img:hover {
   transform: scale(1.03);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
+/* Dashboard titles */
+.dashboard h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Responsive tweaks for mobile */
 @media (max-width: 600px) {
   body {
     margin: 10px;
@@ -30,3 +91,4 @@
     gap: 20px;
   }
 }
+
