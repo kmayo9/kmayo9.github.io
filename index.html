@@ -10,32 +10,69 @@
       color: #333;
       padding: 2rem;
     }
+
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       background: #fff;
       padding: 2.5rem;
       border-radius: 10px;
       box-shadow: 0 3px 12px rgba(0,0,0,0.1);
     }
+
     h1, h2 {
       color: #0d6efd;
     }
+
     a {
       color: #0d6efd;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     .section {
       margin-bottom: 2rem;
     }
+
     ul {
       padding-left: 1.2rem;
     }
+
     li {
       margin-bottom: 0.4rem;
+    }
+
+    /* Featured Dashboards Styling */
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .project {
+      width: 280px;
+      text-align: center;
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project img:hover {
+      transform: scale(1.03);
+    }
+
+    .project p {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
@@ -52,6 +89,32 @@
         <li><strong>📺 TV Series Dashboard</strong> – <a href="https://public.tableau.com/app/profile/kevin.mayo/vizzes" target="_blank">Explore on Tableau Public</a></li>
         <li><strong>📺 TV Series Analysis (Python)</strong> – <a href="https://www.kaggle.com/code/kevinmayo/notebook5337711d0d" target="_blank">View Kaggle Notebook</a></li>
       </ul>
+    </div>
+
+    <div class="section">
+      <h2>📊 Featured Dashboards</h2>
+      <div class="project-grid">
+        <div class="project">
+          <a href="https://public.tableau.com/app/profile/kevin.mayo/viz/GenreImpactMap/GenreImpactMap" target="_blank">
+            <img src="images/genre_impact.png" alt="Genre Impact Map">
+          </a>
+          <p>Genre Impact Map – Heat and halo scores across cinematic styles</p>
+        </div>
+
+        <div class="project">
+          <a href="https://public.tableau.com/app/profile/kevin.mayo/viz/FranchiseFootprintScalevsEfficiency/AverageRevenueperReleasebyFranchise" target="_blank">
+            <img src="images/franchise_treemap.png" alt="Franchise Footprint Treemap">
+          </a>
+          <p>Franchise Footprint – Scale vs efficiency across blockbuster IPs</p>
+        </div>
+
+        <div class="project">
+          <a href="https://public.tableau.com/app/profile/kevin.mayo/viz/BoxOfficeDashboardRankingsEfficiencyandTimeline/DomesticBoxOfficeTimeline19372023" target="_blank">
+            <img src="images/box_office_timeline.png" alt="Box Office Timeline">
+          </a>
+          <p>Box Office Timeline – 90+ years of growth, disruption, and recovery</p>
+        </div>
+      </div>
     </div>
 
     <div class="section">
@@ -73,57 +136,3 @@
   </div>
 </body>
 </html>
-<section id="projects">
-  <h2>Featured Dashboards</h2>
-  <div class="project-grid">
-
-    <div class="project">
-      <a href="https://public.tableau.com/app/profile/kevin.mayo/viz/GenreImpactMap/GenreImpactMap" target="_blank">
-        <img src="images/genre_impact.png" alt="Genre Impact Map">
-      </a>
-      <p>Genre Impact Map – Heat and halo scores across cinematic styles</p>
-    </div>
-
-    <div class="project">
-      <a href="https://public.tableau.com/app/profile/kevin.mayo/viz/FranchiseFootprintScalevsEfficiency/AverageRevenueperReleasebyFranchise" target="_blank">
-        <img src="images/franchise_treemap.png" alt="Franchise Footprint Treemap">
-      </a>
-      <p>Franchise Footprint – Scale vs efficiency across blockbuster IPs</p>
-    </div>
-
-    <div class="project">
-      <a href="https://public.tableau.com/app/profile/kevin.mayo/viz/BoxOfficeDashboardRankingsEfficiencyandTimeline/DomesticBoxOfficeTimeline19372023" target="_blank">
-        <img src="images/box_office_timeline.png" alt="Box Office Timeline">
-      </a>
-      <p>Box Office Timeline – 90+ years of growth, disruption, and recovery</p>
-    </div>
-
-  </div>
-</section>
-<section id="projects">
-  <h2>Featured Dashboards</h2>
-  <div class="project-grid">
-
-    <div class="project">
-      <a href="https://public.tableau.com/app/profile/kevin.mayo/viz/GenreImpactMap/GenreImpactMap" target="_blank">
-        <img src="images/genre_impact.png" alt="Genre Impact Map">
-      </a>
-      <p>Genre Impact Map – Heat and halo scores across cinematic styles</p>
-    </div>
-
-    <div class="project">
-      <a href="https://public.tableau.com/app/profile/kevin.mayo/viz/FranchiseFootprintScalevsEfficiency/AverageRevenueperReleasebyFranchise" target="_blank">
-        <img src="images/franchise_treemap.png" alt="Franchise Footprint Treemap">
-      </a>
-      <p>Franchise Footprint – Scale vs efficiency across blockbuster IPs</p>
-    </div>
-
-    <div class="project">
-      <a href="https://public.tableau.com/app/profile/kevin.mayo/viz/BoxOfficeDashboardRankingsEfficiencyandTimeline/DomesticBoxOfficeTimeline19372023" target="_blank">
-        <img src="images/box_office_timeline.png" alt="Box Office Timeline">
-      </a>
-      <p>Box Office Timeline – 90+ years of growth, disruption, and recovery</p>
-    </div>
-
-  </div>
-</section>
