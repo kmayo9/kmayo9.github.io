@@ -2,37 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kevin Mayo's Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <h1>👋 Welcome to Kevin Mayo's Portfolio</h1>
+    <button id="toggleDarkMode">🌙 Toggle Dark Mode</button>
     <p>
       I'm a detail-oriented data analyst and supply chain problem-solver with creative instincts.
       From Tableau dashboards to Python analysis, I bridge operational precision with strategic insights.
     </p>
   </header>
 
-  <section id="projects">
+  <section>
     <h2>📁 Featured Projects</h2>
     <ul>
-      <li>📺 <strong>TV Series Dashboard</strong> – <a href="https://public.tableau.com/..." target="_blank">Explore on Tableau Public</a></li>
-      <li>📺 <strong>TV Series Analysis (Python)</strong> – <a href="https://www.kaggle.com/..." target="_blank">View Kaggle Notebook</a></li>
+      <li>📺 <a href="https://public.tableau.com/app/profile/kmayo9/viz/TVSeriesExplorer/TVSeriesExplorer">TV Series Dashboard – Explore on Tableau Public</a></li>
+      <li>📺 <a href="https://www.kaggle.com/code/kmayo9/tv-series-analysis">TV Series Analysis (Python) – View Kaggle Notebook</a></li>
     </ul>
   </section>
 
-  <section id="dashboards">
+  <section>
     <h2>📊 Featured Dashboards</h2>
-    <ul>
-      <li><strong>Genre Impact Map</strong> – Heat and halo scores across cinematic styles</li>
-      <li><strong>Dog Breed Scatter</strong> – Trainability vs. barking across breed groups</li>
-      <li><strong>Box Office Timeline</strong> – 90+ years of growth, disruption, and recovery</li>
-    </ul>
+
+    <div class="dashboard">
+      <img src="images/genre_impact.png" alt="Genre Impact Map" />
+      <h3>Genre Impact Map</h3>
+      <p>Heat and halo scores across cinematic styles</p>
+    </div>
+
+    <div class="dashboard">
+      <img src="images/Dog_breed_scatter.png" alt="Dog Breed Scatter" />
+      <h3>Dog Breed Scatter</h3>
+      <p>Trainability vs. barking across breed groups</p>
+    </div>
+
+    <div class="dashboard">
+      <img src="images/box_office_timeline.png" alt="Box Office Timeline" />
+      <h3>Box Office Timeline</h3>
+      <p>90+ years of growth, disruption, and recovery</p>
+    </div>
   </section>
 
-  <section id="certifications">
+  <section>
     <h2>🎓 Certifications</h2>
     <ul>
       <li>IBM Data Analyst Professional Certificate</li>
@@ -41,12 +55,19 @@
     </ul>
   </section>
 
-  <section id="links">
+  <section>
     <h2>🔗 Links</h2>
     <ul>
-      <li><a href="https://github.com/kmayo9" target="_blank">GitHub Repository</a></li>
-      <li><a href="https://public.tableau.com/profile/kevin.mayo" target="_blank">Tableau Public Profile</a></li>
+      <li><a href="https://github.com/kmayo9">GitHub Repository</a></li>
+      <li><a href="https://public.tableau.com/app/profile/kmayo9">Tableau Public Profile</a></li>
     </ul>
   </section>
+
+  <script>
+    const toggle = document.getElementById('toggleDarkMode');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
 </body>
 </html>
