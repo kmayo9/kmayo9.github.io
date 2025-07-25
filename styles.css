@@ -1,0 +1,32 @@
+.dashboard-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.dashboard img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .dashboard img {
+    max-width: 100%;
+  }
+
+  .dashboard-section {
+    gap: 20px;
+  }
+}
