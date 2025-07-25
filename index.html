@@ -4,28 +4,35 @@
   <meta charset="UTF-8" />
   <title>Kevin Mayo | Data & Creative Portfolio</title>
   <style>
+    :root {
+      --bg-color: #f0f2f5;
+      --text-color: #333;
+      --container-bg: #fff;
+      --accent: #0d6efd;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background: #f0f2f5;
-      color: #333;
+      background: var(--bg-color);
+      color: var(--text-color);
       padding: 2rem;
     }
 
     .container {
       max-width: 1000px;
       margin: auto;
-      background: #fff;
+      background: var(--container-bg);
       padding: 2.5rem;
       border-radius: 10px;
       box-shadow: 0 3px 12px rgba(0,0,0,0.1);
     }
 
     h1, h2 {
-      color: #0d6efd;
+      color: var(--accent);
     }
 
     a {
-      color: #0d6efd;
+      color: var(--accent);
       text-decoration: none;
     }
 
@@ -71,13 +78,29 @@
     .project p {
       margin-top: 0.5rem;
       font-size: 0.9rem;
-      color: #555;
+      color: var(--text-color);
+    }
+
+    #darkModeToggle {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    #darkModeToggle:hover {
+      opacity: 0.85;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>👋 Welcome to Kevin Mayo's Portfolio</h1>
+    <button onclick="toggleDarkMode()" id="darkModeToggle">🌙 Toggle Dark Mode</button>
+
     <div class="section">
       <p>I'm a detail-oriented data analyst and supply chain problem-solver with creative instincts. From Tableau dashboards to Python analysis, I bridge operational precision with strategic insights.</p>
     </div>
@@ -133,5 +156,26 @@
       </ul>
     </div>
   </div>
+
+  <script>
+    function toggleDarkMode() {
+      const root = document.documentElement;
+      const isDark = root.style.getPropertyValue('--bg-color') === '#121212';
+
+      if (isDark) {
+        root.style.setProperty('--bg-color', '#f0f2f5');
+        root.style.setProperty('--text-color', '#333');
+        root.style.setProperty('--container-bg', '#fff');
+        root.style.setProperty('--accent', '#0d6efd');
+        document.getElementById("darkModeToggle").textContent = "🌙 Toggle Dark Mode";
+      } else {
+        root.style.setProperty('--bg-color', '#121212');
+        root.style.setProperty('--text-color', '#e0e0e0');
+        root.style.setProperty('--container-bg', '#1e1e1e');
+        root.style.setProperty('--accent', '#90caf9');
+        document.getElementById("darkModeToggle").textContent = "☀️ Toggle Light Mode";
+      }
+    }
+  </script>
 </body>
 </html>
