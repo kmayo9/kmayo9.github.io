@@ -1,4 +1,4 @@
-/* Base styles */
+/* 🎨 Base Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
@@ -7,41 +7,88 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark mode styles */
+/* 🌙 Dark Mode */
 .dark {
   background-color: #121212;
   color: #f1f1f1;
 }
+.dark .dashboard {
+  background-color: #1f1f1f;
+  color: #ccc;
+}
+.dark .experience-card {
+  background-color: #1f1f1f;
+  color: #ddd;
+}
 
-/* Header */
+/* 🧠 Header */
 header h1 {
   font-size: 2em;
 }
-
 header button {
   margin-top: 10px;
   padding: 6px 12px;
   cursor: pointer;
 }
 
-/* Section spacing */
+/* 📍 Section Spacing */
 section {
   margin-top: 40px;
 }
 
-/* Dashboard layout: Grid format */
+/* 🚀 Hero Section */
+#hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(#1c1c1c, #2c2c2c);
+  color: white;
+}
+#hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+#hero h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+#hero .tagline {
+  font-size: 18px;
+  font-style: italic;
+}
+.social-icons img {
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* 📁 Projects */
+.project-highlight {
+  margin-top: 20px;
+  background-color: #fff;
+  border-left: 4px solid #007acc;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.project-highlight p {
+  margin-top: 8px;
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* 📊 Dashboard Layout: Responsive Grid */
 .dashboard-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
 }
 
-/* Individual dashboard tiles */
+/* Individual Dashboard Tiles */
 .dashboard {
   text-align: center;
 }
-
-/* Dashboard images with size cap + hover effect */
 .dashboard img {
   max-width: 300px;
   width: 100%;
@@ -51,44 +98,64 @@ section {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .dashboard img:hover {
   transform: scale(1.03);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
-
-/* Dashboard titles */
 .dashboard h3 {
   margin-top: 10px;
   font-size: 1.2em;
 }
+.dashboard p {
+  font-size: 0.95em;
+  color: #444;
+}
 
-/* Lists */
+/* 💼 Experience Card */
+.experience-card {
+  background-color: #2c2c2c;
+  color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  margin: 0 auto;
+}
+.experience-card ul {
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 🧩 Lists */
 ul {
   list-style: none;
   padding: 0;
 }
-
 li {
   margin-bottom: 10px;
 }
 
-/* Responsive tweaks for mobile */
+/* 📱 Mobile Responsiveness */
 @media (max-width: 600px) {
   body {
     margin: 10px;
   }
-
   header h1 {
     font-size: 1.5em;
   }
-
+  #hero h1 {
+    font-size: 36px;
+  }
+  #hero h2 {
+    font-size: 20px;
+  }
   .dashboard img {
     max-width: 100%;
   }
-
   .dashboard-section {
     gap: 20px;
   }
 }
+
 
