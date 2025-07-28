@@ -70,7 +70,7 @@ section {
   border-left: 4px solid #007acc;
   padding: 15px;
   border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 .project-highlight p {
   margin-top: 8px;
@@ -157,5 +157,3 @@ li {
     gap: 20px;
   }
 }
-
-
