@@ -99,8 +99,8 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .dashboard img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 123, 204, 0.5);
 }
 .dashboard h3 {
   margin-top: 10px;
@@ -136,6 +136,17 @@ li {
   margin-bottom: 10px;
 }
 
+/* ✨ Scroll Animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* 📱 Mobile Responsiveness */
 @media (max-width: 600px) {
   body {
@@ -155,5 +166,9 @@ li {
   }
   .dashboard-section {
     gap: 20px;
+  }
+  .experience-card {
+    width: 100%;
+    padding: 15px;
   }
 }
