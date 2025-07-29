@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ✨ Animate all .fade-in-up elements on scroll
+  const faders = document.querySelectorAll('.fade-in-up');
+  const appearOptions = {
+    threshold: 0.2
+  };
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
+
+  // 🧠 Animate metrics strip separately
   const metricsStrip = document.querySelector('.metrics-strip');
   window.addEventListener('scroll', () => {
     const triggerPoint = window.innerHeight * 0.9;
