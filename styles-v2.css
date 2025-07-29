@@ -190,4 +190,20 @@ li {
   .dashboard img { max-width: 100%; }
   .dashboard-section { gap: 20px; }
 }
+/* 🔗 View Live Button Style */
+.view-live-button {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  background-color: #007acc;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.view-live-button:hover {
+  background-color: #005b99;
+}
 
