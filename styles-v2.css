@@ -18,6 +18,13 @@ body {
   background-color: #1f1f1f;
   color: #ccc;
 }
+.dark .highlight-line h3 {
+  background: linear-gradient(to right, #37474f, #263238);
+}
+.dark .metrics-strip span {
+  background-color: #333;
+  color: #eee;
+}
 
 /* ✨ Scroll Animation (Smoothed) */
 .fade-in-up {
@@ -64,12 +71,43 @@ section {
   font-size: 18px;
   font-style: italic;
 }
-.social-icons img {
-  margin: 0 10px;
+
+/* 🌟 Highlight Line */
+.highlight-line h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to right, #2e8b91, #435a6d);
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
-.social-icons img:hover {
-  transform: scale(1.1);
+.highlight-line h3:hover {
+  transform: scale(1.03);
+}
+
+/* 📊 Metrics Strip */
+.metrics-strip {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.metrics-strip span {
+  font-size: 1rem;
+  background-color: #e4e4e4;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+.metrics-strip span:hover {
+  background-color: #d0d0d0;
 }
 
 /* 📁 Projects */
