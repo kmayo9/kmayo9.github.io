@@ -24,5 +24,23 @@
 
     <img src="assets/inventory-analysis/dashboard-preview.png" alt="Dashboard preview" width="700px">
   </section>
+  <section id="data-validation">
+  <h2>🔍 Data Validation & Cleanup Process</h2>
+  <p>Before importing inventory data into Power BI, I built a custom Python pipeline to ensure clean joins and accurate metrics. This process included:</p>
+  <ul>
+    <li>Normalization of <strong>SKU</strong> fields across datasets</li>
+    <li>Detection and removal of blank, malformed, or duplicate keys</li>
+    <li>Validation of relationships between <code>Orders</code> and <code>Costs</code> tables</li>
+  </ul>
+  <p>The result? A Power BI dashboard that reflects real-world conditions — no broken joins, no faulty assumptions.</p>
+
+  <img src="images/data-cleanup-preview.png" alt="Code snippet of Python validation logic">
+  <p>
+    <a href="https://github.com/kmayo9/powerbi_data_cleanup" target="_blank">
+      🐍 View the Python Cleanup Script on GitHub
+    </a>
+  </p>
+</section>
+
 </body>
 </html>
