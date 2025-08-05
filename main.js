@@ -49,3 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+// 🌙 Dark Mode Toggle Logic
+const darkModeBtn = document.getElementById('toggleDarkMode');
+darkModeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
