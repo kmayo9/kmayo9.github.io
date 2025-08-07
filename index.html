@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kevin Mayo's Portfolio</title>
-  <link rel="stylesheet" href="styles-v2.css" />
+  <title>Kevin Mayo’s Portfolio</title>
+  <link rel="stylesheet" href="styles/styles-v2.css" />
 </head>
 <body>
 
@@ -13,6 +13,10 @@
     <h1>Kevin Mayo</h1>
     <h2>Supply Chain Strategist • Data Analyst • Insight Architect</h2>
     <p class="tagline">Data as narrative. Insight as strategy.</p>
+
+    <!-- Dark Mode Toggle -->
+    <button id="toggleDarkMode" class="btn">🌙 Toggle Dark Mode</button>
+
     <nav class="chapter-links fade-in-up">
       <a href="#projects">About</a>
       <a href="#dashboards">Dashboards</a>
@@ -20,14 +24,23 @@
       <a href="#certifications">Certifications</a>
       <a href="#links">Links</a>
     </nav>
+
     <div class="social-icons">
-      <a href="https://github.com/kmayo9" target="_blank"><img src="https://img.icons8.com/ios-filled/50/github.png" alt="GitHub" /></a>
-      <a href="https://www.kaggle.com/kevinmayo" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png" alt="Kaggle" width="40" /></a>
-      <a href="https://public.tableau.com/app/profile/kevin.mayo" target="_blank"><img src="https://img.icons8.com/color/48/tableau-software.png" alt="Tableau" /></a>
+      <a href="https://github.com/kmayo9" target="_blank">
+        <img src="assets/icons/github.png" alt="GitHub" width="40" />
+      </a>
+      <a href="https://www.kaggle.com/kevinmayo" target="_blank">
+        <img src="assets/icons/kaggle.png" alt="Kaggle" width="40" />
+      </a>
+      <a href="https://public.tableau.com/app/profile/kevin.mayo" target="_blank">
+        <img src="assets/icons/tableau.png" alt="Tableau" width="40" />
+      </a>
     </div>
+
     <div class="highlight-line fade-in-up">
       <h3>ERP Systems | Visual Intelligence | Python-Driven Insights</h3>
     </div>
+
     <div class="metrics-strip fade-in-up">
       <span>NetSuite / SAP</span>
       <span>Power BI, Tableau, Looker</span>
@@ -37,9 +50,6 @@
 
   <!-- 👋 INTRO SECTION -->
   <header class="fade-in-up">
-    <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
-      
-    </div>
     <p>
       I blend analytical precision with cinematic presentation — transforming supply chain data into intuitive visuals and compelling narratives. My fluency in systems like SAP and NetSuite helps untangle complexity, while tools like Power BI, Tableau, and Python (Jupyter, VS Code) drive clarity. Whether designing dashboards or coding interactive experiences, I aim to make data feel human, strategic, and visually bold.
     </p>
@@ -49,14 +59,16 @@
   <section id="projects">
     <h2>📁 Featured Projects</h2>
     <ul>
-      <li>📺 <a href="https://public.tableau.com/app/profile/kevin.mayo/vizzes" target="_blank">See What's Live — My Growing Dashboard Series</a></li>
+      <li>📺 <a href="https://public.tableau.com/app/profile/kevin.mayo/vizzes" target="_blank">See What’s Live — My Growing Dashboard Series</a></li>
     </ul>
     <div class="project-highlight fade-in-up">
       <a href="https://www.kaggle.com/code/kevinmayo/tv-genre-trends-notebook" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png" width="20" height="20" />
+        <img src="assets/icons/kaggle.png" alt="Kaggle" width="20" height="20" />
         <span>TV Genre Trends (Python) – View Notebook</span>
       </a>
-      <p>A Python-powered deep dive into genre evolution, viewer ratings, and storytelling trends across decades of television.</p>
+      <p>
+        A Python-powered deep dive into genre evolution, viewer ratings, and storytelling trends across decades of television.
+      </p>
     </div>
   </section>
 
@@ -83,19 +95,24 @@
         <a href="https://public.tableau.com/app/profile/kevin.mayo/viz/BoxOfficeDashboardRankingsEfficiencyandTimeline/DomesticBoxOfficeTimeline19372023" target="_blank" class="view-live-button">🔗 View Live</a>
       </div>
     </div>
+
+    <!-- Trivia Trigger -->
+    <button onclick="openTriviaModal()" class="view-live-button">
+      🎬 Take the Movie Trivia Challenge
+    </button>
   </section>
 
-  <!-- 🎬 Trivia Modal -->
+  <!-- 🎬 TRIVIA MODAL -->
   <div id="triviaModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>🎬 Movie Trivia Challenge</h2>
       <p>Which film holds the highest domestic box office total as of 2023?</p>
       <form id="triviaForm">
-        <input type="radio" name="answer" value="Titanic"> Titanic<br>
-        <input type="radio" name="answer" value="Avengers: Endgame"> Avengers: Endgame<br>
-        <input type="radio" name="answer" value="Star Wars: The Force Awakens"> Star Wars: The Force Awakens<br>
-        <input type="radio" name="answer" value="Barbie"> Barbie<br><br>
+        <input type="radio" name="answer" value="Titanic" /> Titanic<br />
+        <input type="radio" name="answer" value="Avengers: Endgame" /> Avengers: Endgame<br />
+        <input type="radio" name="answer" value="Star Wars: The Force Awakens" /> Star Wars: The Force Awakens<br />
+        <input type="radio" name="answer" value="Barbie" /> Barbie<br /><br />
         <button type="submit">Submit</button>
       </form>
       <div id="triviaResult"></div>
@@ -104,18 +121,18 @@
 
   <!-- 💼 EXPERIENCE -->
   <section id="experience">
-  <h2>💼 Professional Experience</h2>
-  <div class="experience-card fade-in-up">
-    <h3>ERP Integration & BI Reporting</h3>
-    <p><em>2015–2024 • SAP • NetSuite • Power BI • IBM Cognos • Google Looker</em></p>
-    <ul>
-      <li>Consolidated ERP data from SAP and NetSuite to optimize supply chain planning and inventory management.</li>
-      <li>Developed custom KPIs and manufacturing dashboards in Power BI and Cognos for real-time operations tracking.</li>
-      <li>Leveraged Looker for performance benchmarking across distribution centers and vendor networks.</li>
-      <li>Translated backend metrics into interactive Tableau visualizations to support executive decision-making.</li>
-    </ul>
-  </div>
-</section>
+    <h2>💼 Professional Experience</h2>
+    <div class="experience-card fade-in-up">
+      <h3>ERP Integration & BI Reporting</h3>
+      <p><em>2015–2024 • SAP • NetSuite • Power BI • IBM Cognos • Google Looker</em></p>
+      <ul>
+        <li>Consolidated ERP data from SAP and NetSuite to optimize supply chain planning and inventory management.</li>
+        <li>Developed custom KPIs and manufacturing dashboards in Power BI and Cognos for real-time operations tracking.</li>
+        <li>Leveraged Looker for performance benchmarking across distribution centers and vendor networks.</li>
+        <li>Translated backend metrics into interactive Tableau visualizations to support executive decision-making.</li>
+      </ul>
+    </div>
+  </section>
 
   <!-- 🎓 CERTIFICATIONS -->
   <section id="certifications" class="fade-in-up">
@@ -136,20 +153,12 @@
     </ul>
   </section>
 
-  <!-- 📷 Image Modal Viewer -->
-  <div id="imageModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:black; justify-content:center; align-items:center;">
-    <img id="modalImg" src="" alt="Expanded View" style="max-width:90%; max-height:90%; border-radius:12px;" onclick="closeModal()" />
+  <!-- 📷 IMAGE MODAL VIEWER -->
+  <div id="imageModal" class="modal">
+    <img id="modalImg" src="" alt="Expanded View" onclick="closeModal()" />
   </div>
 
   <!-- 🔧 Enhancements Script -->
-  <script src="main.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
-<div class="hero-cta">
-  <a
-    href="mailto:kmayo9@gmail.com?subject=Interested%20in%20Connecting"
-    class="btn btn-primary"
-  >
-    📧 Email Kevin
-  </a>
-</div>
