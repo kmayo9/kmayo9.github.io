@@ -1,3 +1,14 @@
+
+:root {
+  --text-light: #444;
+  --text-dark: #e0e0e0;
+  --heading-light: #222;
+  --heading-dark: #ffffff;
+  --card-light: #f9f9f9;
+  --card-dark: #1f1f1f;
+  --accent-light: #007acc;
+  --accent-dark: #66ccff;
+}
 /* 🎨 Base Styles */
 body {
   font-family: Arial, sans-serif;
@@ -35,7 +46,7 @@ body {
 .fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
-}
+
 
 /* 🚀 Hero Section */
 #hero {
@@ -273,11 +284,42 @@ li {
 .cert-list li {
   margin-bottom: 24px;
   line-height: 1.6;
-  color: #e0e0e0;
+  color: var(--text-light);
+  background-color: var(--card-light);
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cert-list strong {
-  color: #ffffff;
+  display: block;
+  margin-bottom: 6px;
+  color: var(--heading-light);
   font-weight: 600;
+  font-size: 1.05rem;
 }
 
+/* 🌙 Dark Mode Overrides */
+.dark .cert-list li {
+  background-color: var(--card-dark);
+  color: var(--text-dark);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark .cert-list strong {
+  color: var(--heading-dark);
+}
+
+#certifications h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--accent-light);
+  border-bottom: 2px solid var(--accent-light);
+  padding-bottom: 6px;
+}
+
+.dark #certifications h2 {
+  color: var(--accent-dark);
+  border-bottom-color: var(--accent-dark);
+}
