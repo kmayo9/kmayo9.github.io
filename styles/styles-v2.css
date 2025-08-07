@@ -261,5 +261,7 @@ li {
 }
 
 .chapter-links a:hover {
-  color: #00bcd4; /* Optional: accent color on hover */
+  text-decoration: underline;
 }
+
+
