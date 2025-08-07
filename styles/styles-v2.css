@@ -252,3 +252,14 @@ li {
   font-weight: 600;
   color: #333;
 }
+.chapter-links a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 12px;
+  transition: color 0.3s ease;
+}
+
+.chapter-links a:hover {
+  color: #00bcd4; /* Optional: accent color on hover */
+}
