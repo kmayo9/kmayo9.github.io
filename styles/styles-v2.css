@@ -1,4 +1,4 @@
-
+/* 🎨 Base Styles */
 :root {
   --text-light: #444;
   --text-dark: #e0e0e0;
@@ -9,7 +9,15 @@
   --accent-light: #007acc;
   --accent-dark: #66ccff;
 }
-/* 🎨 Base Styles */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
@@ -46,7 +54,7 @@ body {
 .fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
-
+}
 
 /* 🚀 Hero Section */
 #hero {
