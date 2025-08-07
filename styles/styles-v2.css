@@ -264,4 +264,20 @@ li {
   text-decoration: underline;
 }
 
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cert-list li {
+  margin-bottom: 24px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.cert-list strong {
+  color: #ffffff;
+  font-weight: 600;
+}
 
