@@ -252,6 +252,22 @@ li { margin-bottom: 10px; }
 .image-close {
   position: fixed; right: 16px; top: 16px; background: rgba(255,255,255,0.9); border-radius: 8px; padding: 4px 10px;
 }
+ /* 🔗 Modal Link Button */
+#infoLink.btn-primary {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+#infoLink.btn-primary:hover {
+  background-color: var(--accent-color-dark);
+}
 
 /* Image modal body */
 #imageModal { display: none; align-items: center; justify-content: center; }
