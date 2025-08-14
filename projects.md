@@ -1,6 +1,7 @@
 ---
 title: Projects
 ---
+
 #### NetSuite inventory implementation for Zeus Living
 
 - **Role:** Lead Warehouse Manager & ERP Data Migration Specialist  
