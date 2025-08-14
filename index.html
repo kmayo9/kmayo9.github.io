@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kevin Mayo’s Portfolio</title>
-  <link rel="stylesheet" href="styles/styles-v2.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kevin Mayo’s Portfolio</title>
+<link rel="stylesheet" href="styles/styles-v2.css" />
 </head>
 <body>
   <!-- 🎯 HERO SECTION -->
@@ -13,20 +13,17 @@
     <h2>Supply Chain Strategist • Data Analyst • Insight Architect</h2>
     <p class="tagline">Data as narrative. Insight as strategy.</p>
 
-    <!-- Hero statement -->
     <p class="hero-statement">
       I translate messy operational data into clear, decision-ready stories. From ERP to exec dashboards,
       I build the bridge between what’s happening and what to do next.
     </p>
 
-    <!-- CTA group -->
     <div class="cta-group">
       <a class="btn btn-primary" href="#dashboards">Explore dashboards</a>
       <a class="btn btn-secondary" href="#links">Contact & links</a>
       <button id="toggleDarkMode" class="btn" aria-pressed="false" aria-label="Toggle dark mode">🌙 Dark mode</button>
     </div>
 
-    <!-- Chapter nav -->
     <nav class="chapter-links fade-in-up" aria-label="Section navigation">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -36,7 +33,6 @@
       <a href="#links">Links</a>
     </nav>
 
-    <!-- Social icons -->
     <div class="social-icons" aria-label="Profiles">
       <a href="https://github.com/kmayo9" target="_blank" aria-label="GitHub">
         <img src="./assets/icons/github.svg" alt="GitHub" width="40" />
@@ -52,7 +48,6 @@
     <div class="highlight-line fade-in-up">
       <h3>ERP Systems | Visual Intelligence | Python-Driven Insights</h3>
     </div>
-
     <div class="metrics-strip fade-in-up" aria-label="Skills summary">
       <span>NetSuite / SAP</span>
       <span>Power BI, Tableau, Looker</span>
@@ -73,15 +68,13 @@
   <!-- 📁 PROJECTS -->
   <section id="projects" class="fade-in-up">
     <h2>📁 Featured Projects</h2>
-
     <p>
       A selection of ERP implementations, workflow automations, and analytics work. Click Details on any card for the
       full write-up.
     </p>
 
-    <!-- Projects grid -->
     <div class="project-grid">
-      <!-- NetSuite 1: Inventory Implementation (live) -->
+      <!-- ✅ NetSuite: Inventory Implementation -->
       <article class="project-card fade-in-up" tabindex="0" aria-labelledby="proj-ns-impl">
         <img src="images/netsuite_inventory_placeholder.png" alt="NetSuite inventory implementation preview" />
         <h3 id="proj-ns-impl">NetSuite ERP — Inventory Implementation</h3>
@@ -92,103 +85,62 @@
           <button
             class="btn info-button"
             data-title="NetSuite ERP — Inventory Implementation"
-            data-body="Led end-to-end migration from Zenventory/Google Sheets into NetSuite across active warehouses.
-Designed standardized SKU conventions; built bin/location hierarchies; reconciled migrated records to physical counts while operations continued. 
-Partnered with Jade Global for config fit; trained warehouse teams and directors; maintained ownership post–go‑live to iterate on saved searches, workflows, and data quality."
+            data-body="Led end-to-end migration from Zenventory/Google Sheets into NetSuite across active warehouses. Designed standardized SKU conventions; built bin/location hierarchies; reconciled migrated records to physical counts while operations continued. Partnered with Jade Global for config fit; trained warehouse teams and directors; maintained ownership post–golive to iterate on saved searches, workflows, and data quality."
             data-link="inventory-analysis.html"
-          >
-            Details
-          </button>
+          >Details</button>
           <button
             class="btn btn-light quick-view"
             data-img="images/netsuite_inventory_placeholder.png"
             aria-label="Quick view image"
-          >
-            Quick view
-          </button>
+          >Quick view</button>
         </div>
       </article>
 
-      <!-- NetSuite 2: Saved Searches & Workflow Automation (placeholder) -->
-      <article class="project-card fade-in-up" tabindex="0" aria-labelledby="proj-ns-workflows">
-        <img src="images/netsuite_workflows_placeholder.png" alt="NetSuite saved searches and workflows preview" />
-        <h3 id="proj-ns-workflows">NetSuite — Saved Searches & Workflow Automation</h3>
+      <!-- 📊 Inventory Analysis & Forecasting -->
+      <article class="project-card fade-in-up" tabindex="0" aria-labelledby="proj-inventory">
+        <img src="images/inventory_analysis_placeholder.png" alt="Inventory analysis dashboard preview" />
+        <h3 id="proj-inventory">Inventory Analysis & Forecasting</h3>
         <p>
-          Curated saved searches and approvals to reduce manual touchpoints and surface exceptions in real time.
+          Power BI dashboards for SKU-level demand planning, reorder optimization, and vendor performance tracking.
         </p>
         <div class="card-actions">
           <button
             class="btn info-button"
-            data-title="NetSuite — Saved Searches & Workflow Automation"
-            data-body="Designed exception-focused saved searches (receiving variances, stale POs, negative bins) and lightweight approvals to streamline procurement and inventory controls.
-Improved cycle count cadence, visibility, and accountability without overengineering."
-            data-link="#"
-          >
-            Details
-          </button>
+            data-title="Inventory Analysis & Forecasting"
+            data-body="Built dynamic dashboards in Power BI to visualize inventory turnover, forecast demand, and flag stockouts. Integrated Excel models and Python scripts for scenario planning and vendor scorecards."
+            data-link="inventory-analysis-powerbi/"
+          >Details</button>
           <button
             class="btn btn-light quick-view"
-            data-img="images/netsuite_workflows_placeholder.png"
+            data-img="images/inventory_analysis_placeholder.png"
             aria-label="Quick view image"
-          >
-            Quick view
-          </button>
+          >Quick view</button>
         </div>
       </article>
 
-      <!-- NetSuite 3: KPI Dashboard & Enablement (placeholder) -->
-      <article class="project-card fade-in-up" tabindex="0" aria-labelledby="proj-ns-kpis">
-        <img src="images/netsuite_kpis_placeholder.png" alt="NetSuite KPIs and enablement preview" />
-        <h3 id="proj-ns-kpis">NetSuite — KPI Dashboard & Training Enablement</h3>
+      <!-- 🏨 Hotel Booking Demand Analysis -->
+      <article class="project-card fade-in-up" tabindex="0" aria-labelledby="proj-hotel">
+        <img src="images/hotel_booking_placeholder.png" alt="Hotel booking demand dashboard preview" />
+        <h3 id="proj-hotel">Hotel Booking Demand Analysis</h3>
         <p>
-          Role-tailored KPIs and enablement guides to align frontline actions with leadership targets.
+          Explored seasonal booking trends, cancellation patterns, and customer segmentation using Power BI.
         </p>
         <div class="card-actions">
           <button
             class="btn info-button"
-            data-title="NetSuite — KPI Dashboard & Training Enablement"
-            data-body="Built role-specific KPI views and guides that translate metrics into actions for warehouse staff and leaders.
-Emphasis on adoption: short, visual workflows and just‑in‑time references to reinforce behavior change."
-            data-link="#"
-          >
-            Details
-          </button>
+            data-title="Hotel Booking Demand Analysis"
+            data-body="Analyzed booking behavior across hotel types using Power BI. Identified key drivers of cancellations, visualized lead time impact, and built interactive dashboards with slicers and drill-throughs for stakeholder review."
+            data-link="hotel-booking-demand-analysis/"
+          >Details</button>
           <button
             class="btn btn-light quick-view"
-            data-img="images/netsuite_kpis_placeholder.png"
+            data-img="images/hotel_booking_placeholder.png"
             aria-label="Quick view image"
-          >
-            Quick view
-          </button>
-        </div>
-      </article>
-
-      <!-- Python/Kaggle: TV Genre Trends -->
-      <article class="project-card fade-in-up" tabindex="0" aria-labelledby="proj-tv-trends">
-        <img src="images/genre_trends_placeholder.png" alt="TV Genre Trends notebook preview" />
-        <h3 id="proj-tv-trends">TV Genre Trends (Python)</h3>
-        <p>
-          Pattern detection and feature exploration over decades of ratings and genre mixes.
-        </p>
-        <div class="card-actions">
-          <a
-            class="btn"
-            href="https://www.kaggle.com/code/kevinmayo/tv-genre-trends-notebook"
-            target="_blank"
-            rel="noopener"
-          >Open notebook</a>
-          <button
-            class="btn btn-light quick-view"
-            data-img="images/genre_trends_placeholder.png"
-            aria-label="Quick view image"
-          >
-            Quick view
-          </button>
+          >Quick view</button>
         </div>
       </article>
     </div>
 
-    <!-- Optional: link to external portfolio lists -->
     <ul class="external-links">
       <li>📺 <a href="https://public.tableau.com/app/profile/kevin.mayo/vizzes" target="_blank">See What’s Live — My Growing Dashboard Series</a></li>
     </ul>
@@ -197,7 +149,6 @@ Emphasis on adoption: short, visual workflows and just‑in‑time references to
   <!-- 📊 DASHBOARDS -->
   <section id="dashboards" class="fade-in-up">
     <h2>📊 Featured Dashboards</h2>
-
     <div class="dashboard-section">
       <!-- Card 1 -->
       <div class="dashboard fade-in-up" tabindex="0">
@@ -216,14 +167,9 @@ Emphasis on adoption: short, visual workflows and just‑in‑time references to
               data-title="Genre Impact Map"
               data-body="This Tableau view surfaces top genre combinations among highly rated TV series. The structure emphasizes rapid pattern recognition with optional drill-ins for context."
               data-link="https://public.tableau.com/views/GenreInsightsfrom100CriticallyReviewedTVSeriesVolumeRatingsImpact/TopGenreCombinationsbyShowCountAmongTVSeriesfrom1967to2023withHighestReviewsandRatings"
-            >
-              Details
-            </button>
+            >Details</button>
           </div>
         </div>
-        <a
-          href="https://public.tableau.com/views/GenreInsightsfrom100CriticallyReviewedTVSeriesVolumeRatingsImpact/TopGenreCombinationsbyShowCountAmongTVSeriesfrom1967to2023withHighestReviewsandRatings"
-          target="_blank" class="view-live-button">🔗 View Live</a>
       </div>
 
       <!-- Card 2 -->
@@ -242,14 +188,9 @@ Emphasis on adoption: short, visual workflows and just‑in‑time references to
               data-title="Dog Breed Scatter"
               data-body="A trait comparison built for fast pattern discovery. Users can spot natural groups and outliers without losing the plot."
               data-link="https://public.tableau.com/views/BreedPersonalityShowcase/TraitScatterTrainabilityvs_Barking"
-            >
-              Details
-            </button>
+            >Details</button>
           </div>
         </div>
-        <a
-          href="https://public.tableau.com/views/BreedPersonalityShowcase/TraitScatterTrainabilityvs_Barking"
-          target="_blank" class="view-live-button">🔗 View Live</a>
       </div>
 
       <!-- Card 3 -->
@@ -268,19 +209,14 @@ Emphasis on adoption: short, visual workflows and just‑in‑time references to
               data-title="Box Office Timeline"
               data-body="Designed to foreground trend shape and pacing. Great for opening conversations about macro cycles and shock events."
               data-link="https://public.tableau.com/app/profile/kevin.mayo/viz/BoxOfficeDashboardRankingsEfficiencyandTimeline/DomesticBoxOfficeTimeline19372023"
-            >
-              Details
-            </button>
+            >Details</button>
           </div>
         </div>
-        <a
-          href="https://public.tableau.com/app/profile/kevin.mayo/viz/BoxOfficeDashboardRankingsEfficiencyandTimeline/DomesticBoxOfficeTimeline19372023"
-          target="_blank" class="view-live-button">🔗 View Live</a>
       </div>
     </div>
 
     <!-- Trivia Trigger -->
-    <button onclick="openTriviaModal()" class="view-live-button" aria-haspopup="dialog">
+    <button onclick="openTriviaModal()" class="btn btn-primary" aria-haspopup="dialog">
       🎬 Take the Movie Trivia Challenge
     </button>
   </section>
@@ -308,7 +244,7 @@ Emphasis on adoption: short, visual workflows and just‑in‑time references to
       <button class="close" aria-label="Close details" onclick="closeInfoModal()">&times;</button>
       <h2 id="infoTitle"></h2>
       <p id="infoBody"></p>
-      <a id="infoLink" href="#" target="_blank" class="view-live-button">Open project</a>
+      <a id="infoLink" href="#" target="_blank" class="btn btn-primary">Open project</a>
     </div>
   </div>
 

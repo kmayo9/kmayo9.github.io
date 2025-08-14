@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const infoTitle = document.getElementById('infoTitle');
   const infoBody = document.getElementById('infoBody');
   const infoLink = document.getElementById('infoLink');
-
   function openInfoModal({ title, body, link }) {
     if (!infoModal || !infoTitle || !infoBody || !infoLink) return;
     infoTitle.textContent = title || '';
@@ -87,9 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     infoLink.href = link || '#';
     infoModal.style.display = 'block';
   }
-
   window.closeInfoModal = () => { if (infoModal) infoModal.style.display = 'none'; };
-
   document.querySelectorAll('.info-button').forEach(btn => {
     btn.addEventListener('click', () => {
       const title = btn.getAttribute('data-title');
@@ -102,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 📷 Image Modal Viewer
   const imageModal = document.getElementById('imageModal');
   const modalImg = document.getElementById('modalImg');
-
   window.expandImage = img => {
     if (!imageModal || !modalImg) return;
     modalImg.src = img.getAttribute('src');
