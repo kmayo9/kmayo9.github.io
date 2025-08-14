@@ -56,15 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const triviaForm = document.getElementById('triviaForm');
   const triviaModal = document.getElementById('triviaModal');
   const triviaResult = document.getElementById('triviaResult');
-
-  window.openTriviaModal = () => {
-    if (triviaModal) triviaModal.style.display = 'block';
-  };
+  window.openTriviaModal = () => { if (triviaModal) triviaModal.style.display = 'block'; };
   window.closeTriviaModal = () => {
     if (triviaModal) triviaModal.style.display = 'none';
     if (triviaResult) triviaResult.innerHTML = '';
   };
-
   if (triviaForm) {
     triviaForm.addEventListener('submit', event => {
       event.preventDefault();
@@ -78,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 🛈 Info modal logic
+  // 🛈 Info modal logic (shared for dashboards + projects)
   const infoModal = document.getElementById('infoModal');
   const infoTitle = document.getElementById('infoTitle');
   const infoBody = document.getElementById('infoBody');
@@ -91,9 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
     infoLink.href = link || '#';
     infoModal.style.display = 'block';
   }
-  window.closeInfoModal = () => {
-    if (infoModal) infoModal.style.display = 'none';
-  };
+
+  window.closeInfoModal = () => { if (infoModal) infoModal.style.display = 'none'; };
 
   document.querySelectorAll('.info-button').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -139,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
       closeTriviaModal();
     }
   });
-
   [imageModal, infoModal, triviaModal].forEach(m => {
     if (!m) return;
     m.addEventListener('click', e => {
@@ -152,14 +146,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Touch-friendly overlay toggle for dashboard cards
+  // Touch/keyboard-friendly overlay toggle for dashboard cards
   document.querySelectorAll('.dashboard').forEach(card => {
     card.addEventListener('click', e => {
       // Avoid toggling when clicking an interactive child
       if (e.target.closest('a') || e.target.closest('button') || e.target.tagName === 'IMG') return;
       card.classList.toggle('active');
     });
-    // Keyboard accessibility: Enter toggles overlay
+    // Keyboard accessibility: Enter/Space toggles overlay
     card.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
