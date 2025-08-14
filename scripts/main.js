@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalImg) modalImg.src = '';
   };
 
-  // Quick view buttons (open image modal with specified src)
+  // Quick view buttons (open image modal with specified src) — used in dashboards only
   document.querySelectorAll('.quick-view').forEach(btn => {
     btn.addEventListener('click', e => {
       e.stopPropagation();

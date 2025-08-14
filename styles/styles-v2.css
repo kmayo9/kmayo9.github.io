@@ -280,7 +280,7 @@ li { margin-bottom: 10px; }
   body { margin: 12px; font-size: 17px; }
   #hero h1 { font-size: 38px; }
   #hero h2 { font-size: 19px; }
-  chapter-links a { display: inline-block; margin: 6px 10px; }
+  .chapter-links a { display: inline-block; margin: 6px 10px; }
   .dashboard-section { gap: 18px; }
   .project-grid { gap: 18px; }
   .btn { padding: 11px 16px; }
