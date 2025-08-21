@@ -188,3 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.info-button').forEach(btn => {
+    btn.textContent = 'Full Overview';
+  });
+});
