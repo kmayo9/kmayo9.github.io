@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Respect reduced motion
+  // 🧘 Respect reduced motion
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ✨ Scroll-triggered fade-ins
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 🧠 Animate metrics strip when in view (simple reveal)
+  // 📊 Animate metrics strip when in view
   const metricsStrip = document.querySelector('.metrics-strip');
   if (metricsStrip) {
     const reveal = () => {
@@ -66,130 +66,88 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       const selected = document.querySelector('input[name="answer"]:checked');
       if (!selected || !triviaResult) return;
-      if (selected.value === 'Barbie') {
-        triviaResult.innerHTML = '<strong>✅ Correct!</strong> Barbie leads the 2023 domestic box office.';
+      if (selected.value === 'correct') {
+        triviaResult.innerHTML = '<span class="correct">✅ Correct!</span>';
       } else {
-        triviaResult.innerHTML = '<strong>❌ Not quite.</strong> The correct answer is Barbie!';
+        triviaResult.innerHTML = '<span class="incorrect">❌ Try again.</span>';
       }
     });
   }
 
-  // 🛈 Info modal logic (shared for dashboards + projects still using it)
+  // 📘 Info modal logic
+  const infoButtons = document.querySelectorAll('.info-button');
   const infoModal = document.getElementById('infoModal');
-  const infoTitle = document.getElementById('infoTitle');
-  const infoBody = document.getElementById('infoBody');
-  const infoLink = document.getElementById('infoLink');
-  function openInfoModal({ title, body, link }) {
-    if (!infoModal || !infoTitle || !infoBody || !infoLink) return;
-    infoTitle.textContent = title || '';
-    infoBody.textContent = body || '';
-    infoLink.href = link || '#';
-    infoModal.style.display = 'block';
-  }
-  window.closeInfoModal = () => { if (infoModal) infoModal.style.display = 'none'; };
-  document.querySelectorAll('.info-button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const title = btn.getAttribute('data-title');
-      const body = btn.getAttribute('data-body');
-      const link = btn.getAttribute('data-link');
-      openInfoModal({ title, body, link });
+  const infoContent = document.getElementById('infoContent');
+  window.closeInfoModal = () => {
+    if (infoModal) infoModal.style.display = 'none';
+    if (infoContent) infoContent.innerHTML = '';
+  };
+  infoButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.getAttribute('data-info');
+      if (infoContent) infoContent.innerHTML = content;
+      if (infoModal) infoModal.style.display = 'block';
     });
   });
 
-  // 📷 Image Modal Viewer
+  // 🖼️ Image modal viewer
   const imageModal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('modalImg');
-  window.expandImage = img => {
-    if (!imageModal || !modalImg) return;
-    modalImg.src = img.getAttribute('src');
-    imageModal.style.display = 'flex';
-  };
+  const imageModalImg = document.getElementById('imageModalImg');
+  const imageModalCaption = document.getElementById('imageModalCaption');
+  const imageTriggers = document.querySelectorAll('.image-trigger');
   window.closeImageModal = () => {
     if (imageModal) imageModal.style.display = 'none';
-    if (modalImg) modalImg.src = '';
+    if (imageModalImg) imageModalImg.src = '';
+    if (imageModalCaption) imageModalCaption.textContent = '';
   };
-
-  // Quick view buttons (open image modal with specified src) — used in dashboards only
-  document.querySelectorAll('.quick-view').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      const src = btn.getAttribute('data-img');
-      if (!src) return;
-      if (modalImg && imageModal) {
-        modalImg.src = src;
-        imageModal.style.display = 'flex';
-      }
+  imageTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const src = trigger.getAttribute('data-img');
+      const caption = trigger.getAttribute('data-caption');
+      if (imageModalImg) imageModalImg.src = src;
+      if (imageModalCaption) imageModalCaption.textContent = caption;
+      if (imageModal) imageModal.style.display = 'block';
     });
   });
 
-  // ✅ New: Project Full-Overview Modals
-  function openModal(id) {
-    const m = document.getElementById(id);
-    if (!m) return;
-    m.style.display = 'block';
-    document.body.classList.add('no-scroll');
-  }
-  function closeModal(id) {
-    const m = document.getElementById(id);
-    if (!m) return;
-    m.style.display = 'none';
-    const anyOpen = Array.from(document.querySelectorAll('.project-modal'))
-      .some(x => x.style.display === 'block');
-    if (!anyOpen) document.body.classList.remove('no-scroll');
-  }
-  window.closeModal = closeModal; // allow inline onclick to use it
-
-  // Wire up open buttons
-  document.querySelectorAll('.full-overview-button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-modal');
-      if (targetId) openModal(targetId);
+  // 📂 Dashboard overlay toggles
+  const dashboardToggles = document.querySelectorAll('.dashboard-toggle');
+  dashboardToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const targetId = toggle.getAttribute('data-target');
+      const target = document.getElementById(targetId);
+      if (target) target.classList.toggle('visible');
     });
   });
 
-  // Backdrop click closes project modals
-  document.querySelectorAll('.project-modal').forEach(m => {
-    m.addEventListener('click', e => {
-      if (e.target === m) {
-        m.style.display = 'none';
-        const anyOpen = Array.from(document.querySelectorAll('.project-modal'))
-          .some(x => x.style.display === 'block');
-        if (!anyOpen) document.body.classList.remove('no-scroll');
-      }
+  // 🧩 Project modal logic
+  const projectButtons = document.querySelectorAll('.project-button');
+  const projectModal = document.getElementById('projectModal');
+  const projectContent = document.getElementById('projectContent');
+  window.closeProjectModal = () => {
+    if (projectModal) projectModal.style.display = 'none';
+    if (projectContent) projectContent.innerHTML = '';
+  };
+  projectButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.getAttribute('data-project');
+      if (projectContent) projectContent.innerHTML = content;
+      if (projectModal) projectModal.style.display = 'block';
     });
   });
 
-  // Close modals with ESC or backdrop click (extend existing)
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      // Existing closes
-      window.closeImageModal && closeImageModal();
-      window.closeInfoModal && closeInfoModal();
-      window.closeTriviaModal && closeTriviaModal();
-      // New: close all project modals
-      document.querySelectorAll('.project-modal').forEach(m => m.style.display = 'none');
-      document.body.classList.remove('no-scroll');
+  // ⌨️ ESC key closes modals
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeTriviaModal();
+      closeInfoModal();
+      closeImageModal();
+      closeProjectModal();
     }
   });
 
-  // Touch/keyboard-friendly overlay toggle for dashboard cards
-  document.querySelectorAll('.dashboard').forEach(card => {
-    card.addEventListener('click', e => {
-      // Avoid toggling when clicking an interactive child
-      if (e.target.closest('a') || e.target.closest('button') || e.target.tagName === 'IMG') return;
-      card.classList.toggle('active');
-    });
-    // Keyboard accessibility: Enter/Space toggles overlay
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        card.classList.toggle('active');
-      }
-    });
-  });
-});
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.info-button').forEach(btn => {
-    btn.textContent = 'Full Overview';
+  // 🏷️ Label override for info buttons
+  infoButtons.forEach(btn => {
+    btn.setAttribute('aria-label', 'Full Overview');
   });
 });

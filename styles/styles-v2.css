@@ -165,17 +165,22 @@ section h2 { margin-bottom: 12px; }
 }
 .project-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
 .project-card:focus { outline: 3px solid #0b63a6; }
-.project-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+/* Icon sizing for project cards (override full-width images) */
+.project-card > img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: block;
 }
+
 .project-card h3 { margin-top: 10px; font-size: 1.1em; }
 .project-card p { font-size: 0.96em; color: #444; }
 .card-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 
-/* (kept) legacy highlight block style if needed elsewhere */
+/* (optional highlight block style for future use) */
 .project-highlight {
   margin-top: 16px;
   background-color: var(--card-light);
@@ -252,19 +257,6 @@ li { margin-bottom: 10px; }
 .image-close {
   position: fixed; right: 16px; top: 16px; background: rgba(255,255,255,0.9); border-radius: 8px; padding: 4px 10px;
 }
-/* 🔗 Modal Link Button */
-#infoLink.btn-primary {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background-color: var(--accent-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-#infoLink.btn-primary:hover { background-color: var(--accent-color-dark); }
 
 /* Image modal body */
 #imageModal { display: none; align-items: center; justify-content: center; }
@@ -304,7 +296,7 @@ li { margin-bottom: 10px; }
   #hero h2 { font-size: 18px; }
 }
 
-/* ✅ New: long case study handling + scroll lock */
+/* ✅ Long case study handling + scroll lock */
 .modal-content {
   max-height: 80vh;
   overflow-y: auto;
@@ -313,13 +305,13 @@ body.no-scroll { overflow: hidden; }
 .modal-content h3 { margin-top: 14px; margin-bottom: 8px; }
 .modal-content ul { padding-left: 18px; }
 .modal-content ul li { list-style: disc; margin-left: 16px; }
+
 /* ✨ Modal Animation */
 .modal-content {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
 .modal.active .modal-content {
   opacity: 1;
   transform: translateY(0);
