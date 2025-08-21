@@ -313,3 +313,14 @@ body.no-scroll { overflow: hidden; }
 .modal-content h3 { margin-top: 14px; margin-bottom: 8px; }
 .modal-content ul { padding-left: 18px; }
 .modal-content ul li { list-style: disc; margin-left: 16px; }
+/* ✨ Modal Animation */
+.modal-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+  opacity: 1;
+  transform: translateY(0);
+}
