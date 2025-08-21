@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     reveal();
   }
 
-  // 🎮 Trivia modal logic
+  // 🎬 Trivia modal logic
   const triviaForm = document.getElementById('triviaForm');
   const triviaModal = document.getElementById('triviaModal');
   const triviaResult = document.getElementById('triviaResult');
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 🛈 Info modal logic (shared for dashboards + projects)
+  // 🛈 Info modal logic (shared for dashboards + projects still using it)
   const infoModal = document.getElementById('infoModal');
   const infoTitle = document.getElementById('infoTitle');
   const infoBody = document.getElementById('infoBody');
@@ -122,24 +122,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Close modals with ESC or backdrop click
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      closeImageModal();
-      closeInfoModal();
-      closeTriviaModal();
-    }
-  });
-  [imageModal, infoModal, triviaModal].forEach(m => {
+  // ✅ New: Project Full-Overview Modals
+  function openModal(id) {
+    const m = document.getElementById(id);
     if (!m) return;
+    m.style.display = 'block';
+    document.body.classList.add('no-scroll');
+  }
+  function closeModal(id) {
+    const m = document.getElementById(id);
+    if (!m) return;
+    m.style.display = 'none';
+    const anyOpen = Array.from(document.querySelectorAll('.project-modal'))
+      .some(x => x.style.display === 'block');
+    if (!anyOpen) document.body.classList.remove('no-scroll');
+  }
+  window.closeModal = closeModal; // allow inline onclick to use it
+
+  // Wire up open buttons
+  document.querySelectorAll('.full-overview-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-modal');
+      if (targetId) openModal(targetId);
+    });
+  });
+
+  // Backdrop click closes project modals
+  document.querySelectorAll('.project-modal').forEach(m => {
     m.addEventListener('click', e => {
-      // Close if clicking backdrop (not the content)
       if (e.target === m) {
-        if (m === imageModal) closeImageModal();
-        if (m === infoModal) closeInfoModal();
-        if (m === triviaModal) closeTriviaModal();
+        m.style.display = 'none';
+        const anyOpen = Array.from(document.querySelectorAll('.project-modal'))
+          .some(x => x.style.display === 'block');
+        if (!anyOpen) document.body.classList.remove('no-scroll');
       }
     });
+  });
+
+  // Close modals with ESC or backdrop click (extend existing)
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      // Existing closes
+      window.closeImageModal && closeImageModal();
+      window.closeInfoModal && closeInfoModal();
+      window.closeTriviaModal && closeTriviaModal();
+      // New: close all project modals
+      document.querySelectorAll('.project-modal').forEach(m => m.style.display = 'none');
+      document.body.classList.remove('no-scroll');
+    }
   });
 
   // Touch/keyboard-friendly overlay toggle for dashboard cards
